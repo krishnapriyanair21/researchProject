@@ -1,5 +1,5 @@
 const express = require('express')
-const { engine } = require('express-handlebars')
+const engine  = require('express-handlebars')
 const app = express()
 const handlers = require('./lib/handlers')
 
@@ -26,6 +26,13 @@ app.use(handlers.notFound)
 // custom 500 page
 app.use(handlers.serverError)
 
-app.listen(port, () => console.log(
-  `Express started on http://localhost:${port}; ` +
-  `press Ctrl-C to terminate.`))
+
+// global module
+if(require.main === module) {
+  app.listen(port, () => {
+    console.log( `Express started on http://localhost:${port}` +
+      '; press Ctrl-C to terminate.' )
+  })
+} else {
+  module.exports = app
+}

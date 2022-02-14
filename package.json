@@ -11,12 +11,12 @@
   "license": "(MIT OR GPL-3.0)",
   "dependencies": {
     "express": "^4.16.3",
-    "express-handlebars": "^3.0.2"
+    "express-handlebars": "^3.1.0"
   },
   "devDependencies": {
-    "eslint": "^5.15.3",
+    "eslint": "^5.16.0",
     "jest": "^24.9.0",
-    "portfinder": "^1.0.20",
-    "puppeteer": "^1.13.0"
+    "portfinder": "^1.0.28",
+    "puppeteer": "^1.20.0"
   }
 }
