@@ -11,8 +11,10 @@ app.engine('handlebars', engine({
 app.set('view engine', 'handlebars')
 
 //static view
+// eslint-disable-next-line no-undef
 app.use(express.static(__dirname + '/public'))
 
+// eslint-disable-next-line no-undef
 const port = process.env.PORT || 3000
 
 // GET
@@ -30,6 +32,7 @@ app.use(handlers.serverError)
 // global module
 if(require.main === module) {
   app.listen(port, () => {
+    // eslint-disable-next-line no-console
     console.log( `Express started on http://localhost:${port}` +
       '; press Ctrl-C to terminate.' )
   })

@@ -1,4 +1,3 @@
-const { TestScheduler } = require('jest')
 const portFinder = require('portfinder')
 const puppeteer = require('puppeteer')
 
