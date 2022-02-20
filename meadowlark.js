@@ -7,6 +7,13 @@ const handlers = require('./lib/handlers')
 // configure Handlebars view engine
 app.engine('handlebars', engine({
   defaultLayout: 'main',
+  helpers: {
+    section: function(name, options) {
+      if(!this._sections) this._sections = {}
+      this._sections[name] = options.fn(this)
+      return null
+    },
+  }
 }))
 app.set('view engine', 'handlebars')
 
@@ -19,8 +26,8 @@ const port = process.env.PORT || 3000
 
 // GET
 app.get('/', handlers.home)
-
 app.get('/about', handlers.about)
+app.get('/section-test', handlers.sectionTest)
 
 // custom 404 page
 app.use(handlers.notFound)
